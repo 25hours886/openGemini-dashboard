@@ -56,6 +56,7 @@ listenerRouteChange((route) => {
 .el-breadcrumb__inner,
 .el-breadcrumb__inner a {
   font-weight: 400 !important;
+  color: #ffffff;
 }
 
 .app-breadcrumb.el-breadcrumb {
@@ -64,8 +65,9 @@ listenerRouteChange((route) => {
   line-height: var(--v3-navigationbar-height);
   margin-left: 8px;
   .no-redirect {
-    color: #97a8be;
+    color: #ffffff;
     cursor: text;
+    font-family: SourceHanSansSC-regular;
   }
 }
 </style>

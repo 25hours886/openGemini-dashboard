@@ -51,12 +51,46 @@ export const constantRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "dashboard",
-        component: () => import("@/views/dashboard/index.vue"),
+        component: () => import("@/views/dashboard/EChartsComponent.vue"),
         name: "Dashboard",
         meta: {
           title: "首页",
-          svgIcon: "dashboard",
+          elIcon: "House",
           affix: true
+        }
+      }
+    ]
+  },
+  /*
+  {
+    path: "/command-executer",
+    component: Layouts,
+    redirect: "/command-executer/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/command-executer/index.vue"),
+        name: "CommandExecuter",
+        meta: {
+          title: "命令执行",
+          elIcon: "Postcard"
+        }
+      }
+    ]
+  },
+  */
+  {
+    path: "/cluster-basic-information",
+    component: Layouts,
+    redirect: "/cluster-basic-information/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/cluster-basic-information/index.vue"),
+        name: "ClusterBasicInformation",
+        meta: {
+          title: "集群基本信息",
+          elIcon: "Tickets"
         }
       }
     ]
@@ -78,30 +112,38 @@ export const constantRoutes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: "/link",
-    meta: {
-      title: "外链",
-      svgIcon: "link"
-    },
+    path: "/log-displayer",
+    component: Layouts,
+    redirect: "/log-displayer/index",
     children: [
       {
-        path: "https://juejin.cn/post/7089377403717287972",
-        component: () => {},
-        name: "Link1",
+        path: "index",
+        component: () => import("@/views/log-displayer/index.vue"),
+        name: "LogDisplayer",
         meta: {
-          title: "中文文档"
-        }
-      },
-      {
-        path: "https://juejin.cn/column/7207659644487139387",
-        component: () => {},
-        name: "Link2",
-        meta: {
-          title: "新手教程"
+          title: "日志显示",
+          elIcon: "Document"
         }
       }
     ]
   },
+  {
+    path: "/cluster-resource-monitor",
+    component: Layouts,
+    redirect: "/cluster-resource-monitor/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/cluster-resource-monitor/index.vue"),
+        name: "ClusterResourceMonitor",
+        meta: {
+          title: "集群资源监测",
+          elIcon: "Odometer"
+        }
+      }
+    ]
+  }
+  /*
   {
     path: "/table",
     component: Layouts,
@@ -131,123 +173,8 @@ export const constantRoutes: RouteRecordRaw[] = [
         }
       }
     ]
-  },
-  {
-    path: "/menu",
-    component: Layouts,
-    redirect: "/menu/menu1",
-    name: "Menu",
-    meta: {
-      title: "多级路由",
-      svgIcon: "menu"
-    },
-    children: [
-      {
-        path: "menu1",
-        component: () => import("@/views/menu/menu1/index.vue"),
-        redirect: "/menu/menu1/menu1-1",
-        name: "Menu1",
-        meta: {
-          title: "menu1"
-        },
-        children: [
-          {
-            path: "menu1-1",
-            component: () => import("@/views/menu/menu1/menu1-1/index.vue"),
-            name: "Menu1-1",
-            meta: {
-              title: "menu1-1",
-              keepAlive: true
-            }
-          },
-          {
-            path: "menu1-2",
-            component: () => import("@/views/menu/menu1/menu1-2/index.vue"),
-            redirect: "/menu/menu1/menu1-2/menu1-2-1",
-            name: "Menu1-2",
-            meta: {
-              title: "menu1-2"
-            },
-            children: [
-              {
-                path: "menu1-2-1",
-                component: () => import("@/views/menu/menu1/menu1-2/menu1-2-1/index.vue"),
-                name: "Menu1-2-1",
-                meta: {
-                  title: "menu1-2-1",
-                  keepAlive: true
-                }
-              },
-              {
-                path: "menu1-2-2",
-                component: () => import("@/views/menu/menu1/menu1-2/menu1-2-2/index.vue"),
-                name: "Menu1-2-2",
-                meta: {
-                  title: "menu1-2-2",
-                  keepAlive: true
-                }
-              }
-            ]
-          },
-          {
-            path: "menu1-3",
-            component: () => import("@/views/menu/menu1/menu1-3/index.vue"),
-            name: "Menu1-3",
-            meta: {
-              title: "menu1-3",
-              keepAlive: true
-            }
-          }
-        ]
-      },
-      {
-        path: "menu2",
-        component: () => import("@/views/menu/menu2/index.vue"),
-        name: "Menu2",
-        meta: {
-          title: "menu2",
-          keepAlive: true
-        }
-      }
-    ]
-  },
-  {
-    path: "/hook-demo",
-    component: Layouts,
-    redirect: "/hook-demo/use-fetch-select",
-    name: "HookDemo",
-    meta: {
-      title: "Hook 示例",
-      elIcon: "Menu",
-      alwaysShow: true
-    },
-    children: [
-      {
-        path: "use-fetch-select",
-        component: () => import("@/views/hook-demo/use-fetch-select.vue"),
-        name: "UseFetchSelect",
-        meta: {
-          title: "useFetchSelect"
-        }
-      },
-      {
-        path: "use-fullscreen-loading",
-        component: () => import("@/views/hook-demo/use-fullscreen-loading.vue"),
-        name: "UseFullscreenLoading",
-        meta: {
-          title: "useFullscreenLoading"
-        }
-      },
-      {
-        path: "use-watermark",
-        component: () => import("@/views/hook-demo/use-watermark.vue"),
-        name: "UseWatermark",
-        meta: {
-          title: "useWatermark"
-        }
-      }
-    ]
   }
+  */
 ]
 
 /**
@@ -257,17 +184,37 @@ export const constantRoutes: RouteRecordRaw[] = [
  */
 export const asyncRoutes: RouteRecordRaw[] = [
   {
+    path: "/config-updater",
+    component: Layouts,
+    redirect: "/config-updater/index",
+    meta: {
+      roles: ["admin"]
+    },
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/config-updater/index.vue"),
+        name: "ConfigUpdater",
+        meta: {
+          title: "配置文件生成",
+          elIcon: "Setting"
+        }
+      }
+    ]
+  },
+  {
     path: "/permission",
     component: Layouts,
     redirect: "/permission/page",
     name: "Permission",
     meta: {
       title: "权限管理",
-      svgIcon: "lock",
+      elIcon: "Lock",
       roles: ["admin", "editor"], // 可以在根路由中设置角色
       alwaysShow: true // 将始终显示根菜单
     },
     children: [
+      /*
       {
         path: "page",
         component: () => import("@/views/permission/page.vue"),
@@ -277,6 +224,7 @@ export const asyncRoutes: RouteRecordRaw[] = [
           roles: ["admin"] // 或者在子导航中设置角色
         }
       },
+      */
       {
         path: "directive",
         component: () => import("@/views/permission/directive.vue"),

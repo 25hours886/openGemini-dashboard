@@ -1,0 +1,173 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "name": "219.216.65.171",
+      "symbolSize": 60.58095333333333,
+      "x": 206.44687,
+      "y": -13.805411,
+      "value": "running",
+      "category": 0
+    },
+    {
+      "id": "1",
+      "name": "ts-sql",
+      "symbolSize": 35.58095333333333,
+      "x": 353.66415,
+      "y": -205.89165,
+      "value": "running",
+      "category": 0
+    },
+    {
+      "id": "2",
+      "name": "ts-monitor",
+      "symbolSize": 35.58095333333333,
+      "x": 165.43939,
+      "y": 339.7736,
+      "value": "running",
+      "category": 0
+    },
+    {
+      "id": "3",
+      "name": "ts-meta",
+      "symbolSize": 35.58095333333333,
+      "x": 137.69348,
+      "y": 196.1069,
+      "value": "running",
+      "category": 0
+    },
+    {
+      "id": "4",
+      "name": "219.216.64.41",
+      "symbolSize": 60.58095333333333,
+      "x": 387.89572,
+      "y": 110.462326,
+      "value": "running",
+      "category": 1
+    },
+    {
+      "id": "5",
+      "name": "ts-sql",
+      "symbolSize": 35.58095333333333,
+      "x": 597.6618,
+      "y": 135.18481,
+      "value": "running",
+      "category": 1
+    },
+    {
+      "id": "6",
+      "name": "ts-monitor",
+      "symbolSize": 35.58095333333333,
+      "x": 355.78366,
+      "y": -74.882454,
+      "value": "running",
+      "category": 1
+    },
+    {
+      "id": "7",
+      "name": "ts-meta",
+      "symbolSize": 35.58095333333333,
+      "x": 515.2961,
+      "y": -46.167564,
+      "value": "running",
+      "category": 1
+    },
+    {
+      "id": "8",
+      "name": "202.199.6.153",
+      "symbolSize": 60.58095333333333,
+      "x": -81.46074,
+      "y": -204.20204,
+      "value": "running",
+      "category": 2
+    },
+    {
+      "id": "9",
+      "name": "ts-sql",
+      "symbolSize": 35.58095333333333,
+      "x": 4.6313396,
+      "y": -273.8517,
+      "value": "running",
+      "category": 2
+    },
+    {
+      "id": "10",
+      "name": "ts-monitor",
+      "symbolSize": 35.58095333333333,
+      "x": 82.80825,
+      "y": -203.1144,
+      "value": "running",
+      "category": 2
+    },
+    {
+      "id": "11",
+      "name": "ts-meta",
+      "symbolSize": 35.58095333333333,
+      "x": 29.187843,
+      "y": -460.13132,
+      "value": "running",
+      "category": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "0",
+      "target": "1"
+    },
+    {
+      "source": "0",
+      "target": "2"
+    },
+    {
+      "source": "0",
+      "target": "3"
+    },
+    {
+      "source": "4",
+      "target": "5"
+    },
+    {
+      "source": "4",
+      "target": "6"
+    },
+    {
+      "source": "4",
+      "target": "7"
+    },
+    {
+      "source": "8",
+      "target": "9"
+    },
+    {
+      "source": "8",
+      "target": "10"
+    },
+    {
+      "source": "8",
+      "target": "11"
+    },
+    {
+      "source": "1",
+      "target": "5"
+    },
+    {
+      "source": "5",
+      "target": "9"
+    },
+    {
+      "source": "9",
+      "target": "1"
+    }
+  ],
+  "categories": [
+    {
+      "name": "219.216.65.171"
+    },
+    {
+      "name": "219.216.64.41"
+    },
+    {
+      "name": "202.199.6.153"
+    }
+  ]
+}

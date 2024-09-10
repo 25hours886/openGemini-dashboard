@@ -47,10 +47,6 @@ const sidebarMenuHoverBgColor = computed(() => {
 const tipLineWidth = computed(() => {
   return layoutMode.value !== "top" ? "2px" : "0px"
 })
-// 当为顶部模式时隐藏垂直滚动条
-const hiddenScrollbarVerticalBar = computed(() => {
-  return layoutMode.value === "top" ? "none" : "block"
-})
 </script>
 
 <template>
@@ -101,8 +97,8 @@ const hiddenScrollbarVerticalBar = computed(() => {
 }
 
 .el-scrollbar {
-  // 多 1% 是为了在顶部模式时防止垂直滚动
-  height: 101%;
+  // 多 5% 是为了在顶部模式时不显示垂直滚动条
+  height: 105%;
   :deep(.scrollbar-wrapper) {
     // 限制水平宽度
     overflow-x: hidden !important;
@@ -116,10 +112,6 @@ const hiddenScrollbarVerticalBar = computed(() => {
       // 隐藏水平滚动条
       display: none;
     }
-    &.is-vertical {
-      // 当为顶部模式时隐藏垂直滚动条
-      display: v-bind(hiddenScrollbarVerticalBar);
-    }
   }
 }
 
@@ -127,10 +119,6 @@ const hiddenScrollbarVerticalBar = computed(() => {
   border: none;
   min-height: 100%;
   width: 100% !important;
-}
-
-.el-menu--horizontal {
-  height: v-bind(sidebarMenuItemHeight);
 }
 
 :deep(.el-menu-item),
@@ -149,22 +137,18 @@ const hiddenScrollbarVerticalBar = computed(() => {
   }
 }
 
-:deep(.el-sub-menu) {
+:deep(.el-menu-item) {
   &.is-active {
-    > .el-sub-menu__title {
-      color: v-bind(activeTextColor) !important;
-    }
+    @extend %tip-line;
   }
 }
 
-:deep(.el-menu-item.is-active) {
-  @extend %tip-line;
-}
-
 .el-menu--collapse {
-  :deep(.el-sub-menu.is-active) {
-    .el-sub-menu__title {
-      @extend %tip-line;
+  :deep(.el-sub-menu) {
+    &.is-active {
+      .el-sub-menu__title {
+        @extend %tip-line;
+      }
     }
   }
 }

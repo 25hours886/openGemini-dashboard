@@ -47,7 +47,6 @@ $transition-time: 0.35s;
     display: flex;
     .navigation-bar {
       flex: 1;
-      background: transparent;
     }
   }
 }

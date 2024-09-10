@@ -45,7 +45,12 @@ const { layoutMode } = storeToRefs(settingsStore)
   .layout-logo-text {
     height: 100%;
     vertical-align: middle;
+    transform: scale(0.55);
+    transform-origin: 15px;
   }
+  border-bottom: 1px solid rgba(187, 187, 187, 1);
+  border-right: 1px solid rgba(187, 187, 187, 1);
+  margin-bottom: 10px;
 }
 
 .layout-mode-top {

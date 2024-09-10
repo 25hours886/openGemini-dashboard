@@ -9,7 +9,6 @@ import { UserFilled } from "@element-plus/icons-vue"
 import Hamburger from "../Hamburger/index.vue"
 import Breadcrumb from "../Breadcrumb/index.vue"
 import Sidebar from "../Sidebar/index.vue"
-import Notify from "@/components/Notify/index.vue"
 import ThemeSwitch from "@/components/ThemeSwitch/index.vue"
 import Screenfull from "@/components/Screenfull/index.vue"
 import SearchMenu from "@/components/SearchMenu/index.vue"
@@ -21,7 +20,7 @@ const settingsStore = useSettingsStore()
 const userStore = useUserStore()
 
 const { sidebar, device } = storeToRefs(appStore)
-const { layoutMode, showNotify, showThemeSwitch, showScreenfull, showSearchMenu } = storeToRefs(settingsStore)
+const { layoutMode, showThemeSwitch, showScreenfull, showSearchMenu } = storeToRefs(settingsStore)
 
 const isTop = computed(() => layoutMode.value === "top")
 const isMobile = computed(() => device.value === DeviceEnum.Mobile)
@@ -46,8 +45,8 @@ const logout = () => {
     <div class="right-menu">
       <SearchMenu v-if="showSearchMenu" class="right-menu-item" />
       <Screenfull v-if="showScreenfull" class="right-menu-item" />
-      <ThemeSwitch v-if="showThemeSwitch" class="right-menu-item" />
-      <Notify v-if="showNotify" class="right-menu-item" />
+      <ThemeSwitch v-if="showThemeSwitch" class="right-menu-item-for-theme" />
+      <!--Notify v-if="showNotify" class="right-menu-item" /!-->
       <el-dropdown class="right-menu-item">
         <div class="right-menu-avatar">
           <el-avatar :icon="UserFilled" :size="30" />
@@ -55,12 +54,6 @@ const logout = () => {
         </div>
         <template #dropdown>
           <el-dropdown-menu>
-            <a target="_blank" href="https://github.com/un-pany/v3-admin-vite">
-              <el-dropdown-item>GitHub</el-dropdown-item>
-            </a>
-            <a target="_blank" href="https://gitee.com/un-pany/v3-admin-vite">
-              <el-dropdown-item>Gitee</el-dropdown-item>
-            </a>
             <el-dropdown-item divided @click="logout">
               <span style="display: block">退出登录</span>
             </el-dropdown-item>
@@ -75,7 +68,7 @@ const logout = () => {
 .navigation-bar {
   height: var(--v3-navigationbar-height);
   overflow: hidden;
-  background: var(--v3-header-bg-color);
+  background: var(--v3-header-top-bg-color);
   display: flex;
   justify-content: space-between;
   .hamburger {
@@ -116,16 +109,28 @@ const logout = () => {
     .right-menu-item {
       padding: 0 10px;
       cursor: pointer;
+      margin-left: 14px;
       .right-menu-avatar {
         display: flex;
         align-items: center;
+        margin-right: 12px;
         .el-avatar {
           margin-right: 10px;
+          background-color: #FCCA00;
         }
         span {
           font-size: 16px;
+          color: #ffffff;
+          font-family: SourceHanSansSC-regular;
         }
       }
+    }
+    .right-menu-item-for-theme {
+      padding: 0 10px;
+      cursor: pointer;
+      width: 50px;
+      color: #ffffff;
+      border-right: 2px solid rgb(255, 255, 255);
     }
   }
 }
